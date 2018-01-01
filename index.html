@@ -1,19 +1,226 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/css/bootstrap-material-design.min.css" integrity="sha384-R80DC0KVBO4GSTw+wZ5x2zn2pu4POSErBkf8/fSFhPXHxvHJydT0CSgAP2Yo2r4I" crossorigin="anonymous">
+  
+    <title>h4rry-p0rt3r</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-
+    <nav style="-webkit-app-region: drag" class="navbar navbar-expand-lg navbar-light bg-danger text-light">
+      <a style="cursor:pointer;width:100vw;" class="text-uppercase lead display-3 text-light text-center">h4rry-p0rt3r</a>
+    </nav>
+    <div class="container" style="margin-top:3%;margin-bottom:3%;">
+      <div class="row">
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="ipInput">IP-Address</label> 
+                <input class="form-control" id="ipInput" type="text" placeholder="192.168.2.1">
+              </div>
+              <button onclick="test()" class="btn btn-outline-danger btn-block" id="go"></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="card">
+            <div class="card-header">
+              <p class="lead">Scan-Result</p>
+            </div>
+            <div class="card-body">
+              <div class="list-group">
+                <a id="p21" style="cursor:pointer;" class="list-group-item list-group-item-action flex-column align-items-start bg-light">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Port 21 (FTP)</h5>
+                  </div>
+                  <p class="mb-1"><p21></p21></p>
+                </a>
+                <a id="p22" style="cursor:pointer;" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Port 22 (SSH)</h5>
+                  </div>
+                  <p class="mb-1"><p22></p22></p>
+                </a>
+                <a id="p23" style="cursor:pointer;" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Port 23 (Telnet)</h5>
+                    </div>
+                    <p class="mb-1"><p23></p23></p>
+                  </a>
+                <a id="p25" style="cursor:pointer;" class="list-group-item list-group-item-action flex-column align-items-start bg-light">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Port 25 (SMTP)</h5>
+                  </div>
+                  <p class="mb-1"><p25></p25></p>
+                </a>
+                <a id="p80" style="cursor:pointer;" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Port 80 (HTTP)</h5>
+                  </div>
+                  <p class="mb-1"><p80></p80></p>
+                </a>
+                <a id="p433" style="cursor:pointer;" class="list-group-item list-group-item-action flex-column align-items-start bg-light">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Port 433 (HTTPS)</h5>
+                  </div>
+                  <p class="mb-1"><p433></p433></p>
+                </a>
+                <a id="p3306" style="cursor:pointer;" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Port 3306 (MySQL)</h5>
+                  </div>
+                  <p class="mb-1"><p3306></p3306></p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav style="-webkit-app-region: drag" class="navbar navbar-expand-lg navbar-light bg-dark text-light">
+      <a style="cursor:pointer;width:100vw;" class="text-uppercase lead text-light text-center">&copy; 2018 TorGroup</a>
+    </nav>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/js/bootstrap-material-design.js" integrity="sha384-3xciOSDAlaXneEmyOo0ME/2grfpqzhhTcM4cE32Ce9+8DW/04AGoTACzQpphYGYe" crossorigin="anonymous"></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
     <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      const go = ["Accio","Aguamenti","Alohomora","Amnesia","Aparecium","Arania Exumai","Aresto Mommentum","Ascendio","Avada Kedavra","Avis","Bombada","Bombada Maxima","Brackium Emendo","Colloportus","Crucio","Deletrius","Densaugeo","Desillusio","Diffindo","Dissendium","Elasto","Emuvilus","Enervate","Engorgio","Entschleime","Evanesco","Expecto Patronum","Expelliarmus","Ferula","Fidelius","Finite Incantatem","Flagrate","Flipendo","Furunculus","Imobilius","Impedimenta","Imperio","Impervius","Impertubatio","Incendio","Krutius","Levicorpus","Liberalevicorpus","Locomotor mortis","Lumos","Lumus Solem","Lumus Maxima","Mobilcorpus","Mobiliarbus","Morsmorde","Mufflio","Nox","Oblivate","Orchideus","Periculum","Petrificus Totalus","Prior Incantato","Priori Incantatem","Protego","Quietus","Reducio","Relaschio","Reparo","Rictusempra","Riddikulus","Serpensortia","Sictusembra","Soronus","Spuck Schnecken","Stupor","Taratallegra","Verkestatum","Point me","Vipera Evanska","Waddiwasi","Wingardium Leviosa"];
+      let btnText = go[getRandomInt(0,go.length)]
+      document.getElementById("go").innerHTML = btnText
+
+      const net = require('net')
+      const portscanner = require('portscanner')
+      var p22 = false
+      var p23 = false
+      var p21 = false
+      var p80 = false
+      var p25 = false
+      var p433 = false
+      var p3306 = false
+      function test() {
+        let ip = document.getElementById("ipInput").value
+        portscanner.checkPortStatus(22,ip,(error,port)=> {
+          if(port == 'open') {
+            p22 = true
+          } else {
+            p22 = false
+          }
+        })
+        portscanner.checkPortStatus(21,ip,(error,port)=> {
+          if(port == 'open') {
+            p21 = true
+          } else {
+            p21 = false
+          }
+        })
+        portscanner.checkPortStatus(23,ip,(error,port)=> {
+          if(port == 'open') {
+            p23 = true
+          } else {
+            p23 = false
+          }
+        })
+        portscanner.checkPortStatus(80,ip,(error,port)=> {
+          if(port == 'open') {
+            p80 = true
+          } else {
+            p80 = false
+          }
+        })
+        portscanner.checkPortStatus(25,ip,(error,port)=> {
+          if(port == 'open') {
+            p25 = true
+          } else {
+            p25 = false
+          }
+        })
+        portscanner.checkPortStatus(433,ip,(error,port)=> {
+          if(port == 'open') {
+            p433 = true
+          } else {
+            p433 = false
+          }
+        })
+        portscanner.checkPortStatus(3306,ip,(error,port)=> {
+          if(port == 'open') {
+            p3306 = true
+          } else {
+            p3306 = false
+          }
+        })
+      }
+      var p21e = document.getElementsByTagName("p21")[0]
+      var p22e = document.getElementsByTagName("p22")[0]
+      var p23e = document.getElementsByTagName("p23")[0]
+      var p25e = document.getElementsByTagName("p25")[0]
+      var p80e = document.getElementsByTagName("p80")[0]
+      var p433e = document.getElementsByTagName("p433")[0]
+      var p3306e = document.getElementsByTagName("p3306")[0]
+      var p21i = document.getElementById("p21")
+      var p22i = document.getElementById("p22")
+      var p23i = document.getElementById("p23")
+      var p25i = document.getElementById("p25")
+      var p80i = document.getElementById("p80")
+      var p433i = document.getElementById("p433")
+      var p3306i = document.getElementById("p3306")
+      setInterval(()=>{
+        p21e.innerHTML = p21
+        p22e.innerHTML = p22
+        p23e.innerHTML = p23
+        p25e.innerHTML = p25
+        p80e.innerHTML = p80
+        p433e.innerHTML = p433
+        p3306e.innerHTML = p3306
+        if(p21) {
+          p21i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-success text-light'
+        } else {
+          p21i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-danger text-light'
+        }
+        if(p22) {
+          p22i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-success text-light'
+        } else {
+          p22i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-danger text-light'
+        }
+        if(p23) {
+          p23i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-success text-light'
+        } else {
+          p23i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-danger text-light'
+        }
+        if(p25) {
+          p25i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-success text-light'
+        } else {
+          p25i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-danger text-light'
+        }
+        if(p80) {
+          p80i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-success text-light'
+        } else {
+          p80i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-danger text-light'
+        }
+        if(p433) {
+          p433i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-success text-light'
+        } else {
+          p433i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-danger text-light'
+        }
+        if(p3306) {
+          p3306i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-success text-light'
+        } else {
+          p3306i.className = 'list-group-item list-group-item-action flex-column align-items-start bg-danger text-light'
+        }
+      },50);
     </script>
   </body>
 </html>
