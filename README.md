@@ -1,4 +1,4 @@
-**Download will follow soon**
+[Download](https://github.com/torgroup/h4rryp0rt3r/releases/tag/0.0.1)
 # H4ry-P0rt3r
 
 *H4ry-P0rt3r - A minimalistic port scanner*
