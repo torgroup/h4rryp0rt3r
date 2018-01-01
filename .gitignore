@@ -3,3 +3,5 @@ icons
 release-builds
 isc.txt
 .git
+.gitignore
+package-lock.json
